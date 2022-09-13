@@ -136,7 +136,7 @@ export const TransactionsProvider = ({ children }) => {
             {
               from: currentAccount,
               to: addressTo,
-              gas: "0x5208",
+              gas: "0x5208", // 21000 GWei
               value: parsedAmount._hex,
             },
           ],
