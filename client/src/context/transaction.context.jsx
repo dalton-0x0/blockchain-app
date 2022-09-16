@@ -57,9 +57,6 @@ export const TransactionsProvider = ({ children }) => {
             amount: parseInt(transaction.amount._hex) / 10 ** 18,
           })
         );
-
-        console.log(structuredTransactions);
-
         setTransactions(structuredTransactions);
       } else {
         console.log("Ethereum is not present");
@@ -69,7 +66,7 @@ export const TransactionsProvider = ({ children }) => {
     }
   };
 
-  const checkIfWalletIsConnect = async () => {
+  const checkIfWalletIsConnected = async () => {
     try {
       if (!ethereum) return alert("Please install MetaMask.");
 
@@ -171,7 +168,7 @@ export const TransactionsProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    checkIfWalletIsConnect();
+    checkIfWalletIsConnected();
     checkIfTransactionsExists();
   }, [transactionCount]);
 
